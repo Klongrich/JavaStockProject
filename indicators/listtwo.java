@@ -33,12 +33,14 @@ public class listtwo {
     public ArrayList <Double> stoch(ArrayList <Double> data, int period)
     {
         ArrayList <Double> answer = new ArrayList <Double>();
-        double ll = data.get(0);
-        double hh = data.get(0);
+        double ll;
+        double hh;
         double temp;
 
         for (int i = period; i < data.size(); i++)
         {
+            ll = 0;
+            hh = 0;
             for (int x = 0; x < period; x++)
             {
                 temp = data.get(i - x);
