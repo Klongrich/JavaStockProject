@@ -1,0 +1,169 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		
+		<title> Tradding Page </title>
+		<link href="./tradding.css" rel="stylesheet">
+	 
+	 <meta name="viewport" content="width=device-width, initial-scale=1">
+		
+	</head>
+
+	<body>
+		<nav>
+			<ul>
+				<li> <a href="index.html"> Home </a> </li>
+				<li> <a href="coding.html"> Programming </a> </li>
+				<li> <a href="travel.html"> Travel </a> </li>
+				<li> <a href="tradding.html"> Trading </a> </li>
+				<li> <a href="about.html"> About </a> </li>
+			</ul>
+		</nav>
+		
+		<main>
+			
+			<!-- Javascript genertated from Microsoft Co-Pilot -->
+			<script>
+			  // Save scroll position before leaving the page
+			  window.addEventListener("beforeunload", function () {
+			    localStorage.setItem("traddingScrollPosition", window.scrollY);
+			  });
+
+			  // Restore scroll position when coming back
+			  window.addEventListener("load", function () {
+			    const scrollPosition = localStorage.getItem("traddingScrollPosition");
+			    if (scrollPosition) {
+			      window.scrollTo(0, parseInt(scrollPosition, 10));
+			    }
+			  });
+			</script>
+			
+			<div class="container">
+				<div class="barchart">
+					<h2> How to read a bar chart </h2>
+					<p> <strong> Open: </strong> refers to the price the stock started at </p>
+					<p> <strong> High:</strong> refers to the highest price the stock reached in a given time frame. </p>
+					<p> <strong> Low: </strong> refers to the lowest price the stock reached in a given time frame. </p>
+					<p> <strong> Close: </strong> refers to the last price recorded by the given time frame. </p>
+					<br>
+					<p> <strong> 1min, 5min, 10min, 15min, 30min </strong> all refer to the length of time each measurement of the open, high, low, 						then close is taken within the timeframe of the stock price </p>
+				</div>
+				
+				<div class="candlepic">
+					<img src="./imgs/candlePic.png" alt="">
+				</div>
+				
+				<div class="marketinfo">
+					<h2> Market Terminology </h2>
+					<p> <strong> Market Cap </strong> - The total amount the shares are worth multiplied by shares available </p>
+					<p> <strong> Volume </strong> - How many shares are being bought or sold </p>
+					<p> <strong> Float </strong> - Amount of shares available to trade publicly on an exchange </p>
+					<p> <strong> Bid </strong> - Used to represent a buying price for a stock </p>
+
+				</div>
+
+				<div class="marketinfo">
+					<p> <strong> Ask </strong> - Used to represent a selling price for a stock </p>
+					<p> <strong> Level 2 </strong> - Data that shows bids + ask data for orders on a stock </p>
+					<p> <strong> IPO </strong>- Short for initial public offering when a company decides to issue shares </p>
+					<p> <strong> Liquidity </strong> - Ability to easily sell a stock into cash </p>
+					<p> <strong> Reverse stock split </strong> - Used to issues more shares of a stock with a reduction of one share price </p>
+				</div>
+				
+				<div class="marketinfo">
+					<h2> Important Terms to Know Before Placing A Trade </h2>
+					<p> <strong> Limit Order </strong> - Makes it so that you can select a set price you do not want to buy over or sell under when 					going to purchase a stock </p>
+					<p> <strong> Market Order </strong> - Sells or buys the stock at the current market rate. The order executes quickly however the 					exact price can not be guaranteed </p>
+					<p> <strong> Stop Loss </strong> - This can be stopped on a trade that either covers a short or sells at a certain point after a 					stock has been bought or sold. </p>
+					<p> <strong> Margin </strong> - A mechanism that allows you to effectively borrow funds from the brokerage with your deposited 					funds as collateral </p>
+					<p> <strong> Short Sell </strong> - Borrowing shares of a stock rather than selling them in the hopes the price drops to be able 					to purchase the stocks at a lower price than they were sold for, for a profit </p>
+				</div>
+				
+				<div class="indcators">
+					<h2> Indicators </h2>
+					<p> These are used as measurements on stock data to give a signal for a specific price movement. </p>
+					<h2> We shall cover the following indicators </h2>
+					<p> SMA </p>
+					<p> EMA </p>
+					<p> MACD </p>
+					<p> STOCH </p>
+				</div>
+				
+				<div class="indcators">
+					<h2 style="text-align: center"> SMA - Simple Moving Averages </h2>
+					<h3> SMA Formula </h3>
+					<p> <strong> SMA </strong> = (A1 + A2 ... + AN) / N </p>
+					<p> <strong> A </strong> = period of measurement </p>
+					<p> <strong> N </strong> = Number of periods measured </p>
+					<p> The simple moving average adds up all the values in a given period. Say the period is 5 on 5 min of open data. You would take 						each measurement, say 10, 15, 16, 18,12, add them all together to get 71, then divide 71 by the period of 5 to get a simple 						moving average of 14.2. </p>
+
+					<p> The code here works as follows. The sma method I created takes in an array list along with a integer for the period. It then 						starts the loop setting i equal to the period. data.size() returns the length of the data array passed in the parameter. Then 						temp is used to add up all the values between the start as well as end of the period for a particular measurement. After, the 						temp is then divided by the period to get the same value, which is then stored in the answer array. After the entire data array 						has been looped through, the answer array is returned with all the SMA data. </p>	  
+				 </div>
+				 
+				 <div class="indcators-code-image">
+					 <h2 style="text-align: center"> SMA Example in Java </h2>
+					 <img src="imgs/smaCodingExample.png" alt="" />
+				</div>
+				
+				<div class="indcators">
+					<h2 style="text-align: center"> EMA - Expodentail Moving Averages </h2>
+					<h3> EMA - Formula </h3>
+
+					<p> <strong> EMA </strong> = (C - PE) * W + PE </p>
+					<p> <strong> W </strong> = 2 / (N + 1) </p>
+					<p> <strong> N </strong> = number of periods </p>
+
+					<p> <strong> W </strong> = The weight of the multiplier </p>
+					<p> <strong> C </strong> = Closing price of the stock </p>
+					<p> <strong> PE </strong> = previous day EMA measurement </p>
+
+					<p> The coding function allows for a data array of stock data along with an integer for a defined period of measurement. It first 						initializes the mulit variable which gets the weight value for the function. It then calculates the first SMA average, then 						stores it in the start variable. Then, it loops over the rest of the data, storing each value in the answer array. It then 						returns the EMA measurements in a data array. </p>
+				</div>
+				
+				<div class="indcators-code-image">
+					<h2 style="text-align: center"> EMA Example in Java </h2>
+					<img src="imgs/emaCodingExample.png">
+				</div>
+				
+				<div class="indcators">
+					<h2 style="text-align: center">MACD - Moving Average Convergence Divergence </h2>
+					<h3> MACD - Formula </h3>
+					<p> 1.) Takes 3 separate periods as parameters. (period 1, period 2, period 3) </p>
+					<p> 2.) Take an EMA for the 1st period than takes an EMA for the 2nd period </p>
+					<p> 3.) Subtract the 1st period from the 2nd period </p>
+					<p> 4.) This creates the MACD line </p>
+					<p> 5.) Next, you have to generate the signal line by taking an EMA of the MACD line with the 3rd period </p>
+					<p> 6.) You now have the MACD line that is overlayed with the signal line </p>
+					
+					<p> The way this code works is, first you pass in a data array with the 1st then 2nd period as parameters to the MACD function. It then creates two EMA arrays, one from the 1st period and one from the 2nd period using the EMA function described above. It then loops through each array while subtracting the 1st period indexed value from the 2nd period indexed value, then stores the value in an array that it returns. Then to call the MACD, it first creates the signal line by using the returned data array from the EMA function. This returned array from the MACD function is used as a parameter in the ema function with the 3rd period as a parameter. This creates the signal line. After, it then generates the MACD line using the explained function above.</p>
+					</div>
+				
+				<div class="indcators-code-image">
+					<h2 style="text-align: center"> MACD Example in Java </h2>
+					<img src="./imgs/macdCodingExample2.png" alt=""/>
+					<img style="padding-top: 10px" src="./imgs/macdCodingExample.png" alt="" />
+					
+				</div>
+				
+				<div class="indcators">
+					<h2 style="text-align: center"> STOCH - Stochastic Oscillator </h2>
+					<h3> STOCH - formula </h3>
+					<p> <strong> %K </strong> = ((C - L15) / (H15 - L15)) * 100 </p>
+					<p> <strong> C </strong> = Closing price of the stock </p>
+					<p> <strong> L15 </strong> = Lowest price of stock within 15 periods of measurement</p>
+					<p> <strong> H15 </strong> = Highest price of stock within 15 periods of measurement</p>
+					<p> <strong> %K </strong> = the stochastic oscillator price </p>
+					<p> The way this code works is it first uses a data array as well as a period that is passed as parameters to the function. It then initializes 2 doubles called ll (lowest low) & hh (highest high). It then uses a nested for loop to iterate over the data. i is set equal to the period, then the next loop is then used to pull the highest number from the period as well as the lowest number from the period. Then, those two data points are used to calculate the stochastics oscillator value. These points are then stored in a data array called answer. The loop then starts over. After it has run through all the data, it returns the answer array containing the stochastic oscillator values. </p>
+				</div>
+				
+				<div class="indcators-code-image">
+					<h2 style="text-align: center"> STOCH Example in Java </h2>
+					<img src="./imgs/stochExample.png" alt="" />
+				</div>
+			</div>
+		</main>
+	</body>
+	<footer>
+		<h4> Contact Me: Longrichk@icloud.com </h4>
+	</footer>
+</html>
